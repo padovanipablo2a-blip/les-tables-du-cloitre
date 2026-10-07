@@ -13,7 +13,7 @@
   <meta property="og:locale" content="fr_FR">
   <meta name="theme-color" content="#26292b">
   <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
-  <link rel="preload" href="fonts/im-fell-dw-pica.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/eb-garamond.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/style.css">
   <script type="application/ld+json">
   {
@@ -186,13 +186,26 @@
           <h2 id="titre-venir">Venir</h2>
           <address class="adresse">Place du Presbytère<br>04360 Moustiers-Sainte-Marie</address>
           <p>Le centre du village est piéton. Garez-vous sur l’un des parkings à l’entrée de Moustiers, puis montez à pied vers l’église : la place du Presbytère est juste à côté.</p>
-          <p><a href="https://www.google.com/maps/search/?api=1&amp;query=Les+Tables+du+Cloitre+Moustiers-Sainte-Marie" rel="noopener" target="_blank">Itinéraire Google Maps</a><br>
-          <a href="https://www.openstreetmap.org/?mlat=43.84723&amp;mlon=6.22189#map=18/43.84723/6.22189" rel="noopener" target="_blank">Voir sur OpenStreetMap</a></p>
+          <p class="liens-acces">
+            <a class="bouton" href="https://www.google.com/maps/dir/?api=1&amp;destination=Restaurant+Les+Tables+du+Clo%C3%AEtre+Place+du+Presbyt%C3%A8re+04360+Moustiers-Sainte-Marie" target="_blank" rel="noopener">Itinéraire</a>
+            <a class="lien-simple" href="tel:+33743613336">07 43 61 33 36</a>
+          </p>
+          <figure class="acces-photo">
+            <img src="img/place-presbytere.jpg" width="1300" height="975" loading="lazy" alt="La place du Presbytère ensoleillée, avec le parasol bleu et la terrasse du restaurant sous l’arche.">
+            <figcaption>La place du Presbytère et la terrasse</figcaption>
+          </figure>
         </div>
-        <figure class="acces-photo">
-          <img src="img/place-presbytere.jpg" width="1300" height="975" loading="lazy" alt="La place du Presbytère ensoleillée, avec le parasol bleu et la terrasse du restaurant sous l’arche.">
-          <figcaption>La place du Presbytère et la terrasse</figcaption>
-        </figure>
+        <!-- Le plan Google ne se charge qu'avec l'accord du visiteur (Google y dépose des cookies) -->
+        <div class="plan" data-map
+             data-map-src="https://maps.google.com/maps?q=Restaurant%20Les%20Tables%20du%20Clo%C3%AEtre%2C%20Place%20du%20Presbyt%C3%A8re%2C%2004360%20Moustiers-Sainte-Marie&amp;z=17&amp;hl=fr&amp;output=embed">
+          <div class="plan-accord">
+            <svg class="plan-repere" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg>
+            <p class="plan-lieu">Place du Presbytère, près de l’église</p>
+            <p class="plan-note">Le plan interactif est fourni par Google, qui dépose des cookies. Il ne s’affiche que si vous le demandez.</p>
+            <button class="bouton" type="button" data-map-load>Afficher le plan</button>
+            <a class="plan-alt" href="https://www.google.com/maps/dir/?api=1&amp;destination=Restaurant+Les+Tables+du+Clo%C3%AEtre+Place+du+Presbyt%C3%A8re+04360+Moustiers-Sainte-Marie" target="_blank" rel="noopener">ou ouvrir l’itinéraire dans Google Maps</a>
+          </div>
+        </div>
       </div>
     </section>
   </main>
@@ -217,7 +230,7 @@
         <p>L’abus d’alcool est dangereux pour la santé, à consommer avec modération.</p>
       </div>
     </div>
-    <p class="pied__bas">© <span id="annee">2026</span> Les Tables du Cloître. Ce site ne dépose aucun cookie.</p>
+    <p class="pied__bas">© <span id="annee">2026</span> Les Tables du Cloître. Ce site ne dépose aucun cookie ; le plan Google ne se charge qu’avec votre accord.</p>
   </footer>
 
   <script src="js/site.js" defer></script>

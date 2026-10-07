@@ -4,15 +4,15 @@
 
 /* Polices hébergées sur le site (aucune requête vers Google Fonts, donc aucune donnée transmise à un tiers) */
 @font-face {
-  font-family: "IM Fell DW Pica";
-  src: url("../fonts/im-fell-dw-pica.woff2") format("woff2");
-  font-weight: 400;
+  font-family: "EB Garamond";
+  src: url("../fonts/eb-garamond.woff2") format("woff2");
+  font-weight: 400 800;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Karla";
-  src: url("../fonts/karla.woff2") format("woff2");
+  font-family: "Source Sans 3";
+  src: url("../fonts/source-sans-3.woff2") format("woff2");
   font-weight: 400 700;
   font-style: normal;
   font-display: swap;
@@ -30,8 +30,8 @@
   --olivier: #5f6f35;
   --trait: rgba(38, 41, 43, 0.18);
 
-  --serif: "IM Fell DW Pica", "Iowan Old Style", Georgia, serif;
-  --sans: "Karla", "Segoe UI", system-ui, sans-serif;
+  --serif: "EB Garamond", Garamond, "Times New Roman", serif;
+  --sans: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
 
   --mesure: 34rem;
   --gouttiere: clamp(1rem, 4vw, 3rem);
@@ -71,7 +71,7 @@ a:hover { color: var(--bleu-fonce); text-decoration-thickness: 2px; }
 
 h1, h2, h3 {
   font-family: var(--serif);
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.08;
   margin: 0;
   letter-spacing: -0.005em;
@@ -247,7 +247,7 @@ figcaption { font-size: .85rem; color: var(--ardoise-douce); margin-top: .5rem; 
 .horaires tr.aujourdhui th::after { content: " (aujourd’hui)"; font-weight: 400; color: var(--bleu); font-size: .85rem; }
 .petit { font-size: .92rem; color: var(--ardoise-douce); margin-top: 1rem; max-width: var(--mesure); }
 .adresse { font-style: normal; font-size: 1.15rem; margin-bottom: 1.2rem; }
-.acces-photo { margin-top: 2rem; }
+.acces-photo { margin: 2rem 0 0; }
 .acces-photo img { border-radius: 4px; }
 
 /* Avis */
@@ -295,3 +295,41 @@ figcaption { font-size: .85rem; color: var(--ardoise-douce); margin-top: .5rem; 
   .ouverture h1 span { padding-left: .5em; }
   .lieu__photos figure:last-child { margin-top: 2rem; }
 }
+
+/* Plan Google : chargé seulement avec l'accord du visiteur */
+.liens-acces { display: flex; flex-wrap: wrap; align-items: center; gap: .8rem 1.4rem; margin-top: 1.6rem; }
+.plan {
+  position: relative;
+  min-height: 420px;
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--ardoise);
+  border: 1px solid var(--trait);
+}
+.plan-accord {
+  height: 100%;
+  min-height: 420px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .75rem;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  color: var(--pierre-claire);
+  /* Évocation de ruelles, sans rien charger */
+  background:
+    linear-gradient(28deg, transparent 47%, rgba(238,232,219,.07) 47.5%, rgba(238,232,219,.07) 49.5%, transparent 50%),
+    linear-gradient(-62deg, transparent 47%, rgba(238,232,219,.06) 47.5%, rgba(238,232,219,.06) 49%, transparent 49.5%),
+    linear-gradient(95deg, transparent 63%, rgba(238,232,219,.06) 63.5%, rgba(238,232,219,.06) 65%, transparent 65.5%);
+}
+.plan-repere { width: 44px; height: 44px; fill: var(--ocre); stroke: var(--ardoise); stroke-width: 1; }
+.plan-repere circle { fill: var(--ardoise); }
+.plan-lieu { margin: 0; font-family: var(--serif); font-weight: 600; font-size: 1.45rem; color: #fff; }
+.plan-note { margin: 0 0 .5rem; max-width: 30rem; font-size: .95rem; color: #c8c1b2; }
+.plan .bouton { background: var(--ocre); color: var(--ardoise); border: 0; font: inherit; font-weight: 600; cursor: pointer; }
+.plan .bouton:hover { background: var(--pierre-claire); color: var(--ardoise); }
+.plan-alt { font-size: .95rem; color: #e8c08e; }
+.plan-alt:hover { color: #fff; }
+.plan iframe { width: 100%; height: 100%; min-height: 420px; border: 0; display: block; }
+
+/* Bouton de retrait de l'accord (page confidentialité) */
+button.bouton { border: 0; font: inherit; font-weight: 600; cursor: pointer; }
+button.bouton:disabled { opacity: .45; cursor: default; }
+.etat-accord { display: inline-block; margin-left: .8rem; font-size: .92rem; color: var(--ardoise-douce); }
