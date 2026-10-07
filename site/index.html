@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Les Tables du Cloître | Restaurant à Moustiers-Sainte-Marie</title>
   <meta name="description" content="Restaurant de cuisine maison et produits locaux sous la voûte gothique de l’ancien cloître de Moustiers-Sainte-Marie. Tartines, ardoises, plats mijotés. Réservation au 07 43 61 33 36.">
   <link rel="canonical" href="https://les-tables-du-cloitre.onrender.com/">
@@ -11,10 +11,12 @@
   <meta property="og:description" content="Cuisine maison et produits locaux sous la voûte de l’ancien cloître, place du Presbytère.">
   <meta property="og:image" content="https://les-tables-du-cloitre.onrender.com/img/voute.jpg">
   <meta property="og:locale" content="fr_FR">
-  <meta name="theme-color" content="#26292b">
+  <meta name="theme-color" content="#232628">
   <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="fonts/eb-garamond.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="img/voute.jpg" as="image">
   <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.classList.add('js');</script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -35,6 +37,7 @@
       "addressCountry": "FR"
     },
     "geo": { "@type": "GeoCoordinates", "latitude": 43.8472262, "longitude": 6.2218859 },
+    "hasMap": "https://maps.google.com/?cid=9205552214971669910",
     "openingHoursSpecification": [
       { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Friday","Saturday","Sunday"], "opens": "12:00", "closes": "14:30" },
       { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Thursday","Friday","Saturday","Sunday"], "opens": "19:00", "closes": "21:30" }
@@ -46,119 +49,207 @@
 <body>
   <a class="saut" href="#contenu">Aller au contenu</a>
 
-  <header class="entete">
-    <a class="marque" href="./">Les Tables du Cloître<small>Moustiers-Sainte-Marie</small></a>
-    <nav class="nav" aria-label="Navigation principale">
-      <a href="#lieu">Le lieu</a>
-      <a href="#carte">La carte</a>
-      <a href="#horaires">Horaires</a>
-      <a href="#venir">Venir</a>
-      <a class="tel" href="tel:+33743613336">Réserver : 07 43 61 33 36</a>
-    </nav>
+  <header class="entete" data-entete>
+    <div class="conteneur">
+      <a class="marque" href="/" aria-label="Les Tables du Cloître, accueil">
+        <svg viewBox="0 0 24 32" aria-hidden="true"><path d="M2 31V15C2 8 6 3.5 12 1c6 2.5 10 7 10 14v16"/><path d="M7 31V17c0-3.4 1.9-6.2 5-7.8 3.1 1.6 5 4.4 5 7.8v14"/></svg>
+        <span>Les Tables du Cloître<small>Moustiers-Sainte-Marie</small></span>
+      </a>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="menu" data-burger><span></span><b class="invisible">Menu</b></button>
+      <nav class="nav" id="menu" aria-label="Navigation principale" data-nav>
+        <ul class="nav__liens">
+          <li><a href="/#lieu">Le lieu</a></li>
+          <li><a href="/#carte">La carte</a></li>
+          <li><a href="/#galerie">Photos</a></li>
+          <li><a href="/#horaires">Horaires</a></li>
+          <li><a href="/#venir">Venir</a></li>
+        </ul>
+        <a class="bouton" href="tel:+33743613336">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+          Réserver
+        </a>
+      </nav>
+    </div>
   </header>
 
   <main id="contenu">
+    <!-- Ouverture -->
     <section class="ouverture" aria-labelledby="titre">
-      <div class="ouverture__texte">
-        <h1 id="titre">Les Tables <span>du Cloître</span></h1>
-        <p class="ouverture__intro">Cuisine maison et produits locaux, servis sous la voûte gothique de l’ancien cloître de Moustiers-Sainte-Marie.</p>
-        <div class="actions">
-          <a class="bouton" href="tel:+33743613336">Appeler pour réserver</a>
-          <a class="lien-simple" href="#carte">Voir la carte</a>
-        </div>
-        <p class="note-avis"><strong>4,8 sur 5</strong> sur Google, d’après 843 avis de clients.</p>
+      <div class="ouverture__fond">
+        <img src="img/voute.jpg" width="1300" height="975" alt="" fetchpriority="high">
       </div>
-      <figure class="ogive">
-        <img src="img/voute.jpg" width="1300" height="975" alt="La salle du restaurant sous sa voûte d’ogives en pierre, avec le bar en bois et les tables dressées." fetchpriority="high">
-      </figure>
+      <svg class="ouverture__ogive" viewBox="0 0 100 140" aria-hidden="true"><path pathLength="1" vector-effect="non-scaling-stroke" d="M0 140V62C0 30 18 9 50 0c32 9 50 30 50 62v78"/></svg>
+      <div class="ouverture__contenu">
+        <p class="ouverture__lieu apparait">Place du Presbytère, Moustiers-Sainte-Marie</p>
+        <h1 id="titre"><span class="ligne"><span>Les Tables</span></span><span class="ligne"><span>du Cloître</span></span></h1>
+        <p class="ouverture__texte apparait apparait--2">Cuisine maison et produits du pays, servis sous la voûte gothique de l’ancien cloître.</p>
+        <div class="actions apparait apparait--3">
+          <a class="bouton bouton--ocre" href="tel:+33743613336">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+            Réserver une table
+          </a>
+          <a class="bouton bouton--contour-clair" href="#carte">Découvrir la carte</a>
+        </div>
+        <p class="statut apparait apparait--3" data-statut hidden><span class="statut__point"></span><span data-statut-texte></span></p>
+      </div>
+      <a class="defiler" href="#lieu" aria-label="Descendre vers la présentation">Découvrir<span></span></a>
     </section>
 
+    <div class="bandeau" aria-label="En quelques mots">
+      <ul>
+        <li><strong>4,8 / 5</strong><span>843 avis Google</span></li>
+        <li><strong>Fait maison</strong><span>avec des produits locaux</span></li>
+        <li><strong>Salle voûtée</strong><span>et terrasse sur la place</span></li>
+        <li><strong>6 jours sur 7</strong><span>fermé le mercredi</span></li>
+      </ul>
+    </div>
+
+    <!-- Le lieu -->
     <section class="section" id="lieu" aria-labelledby="titre-lieu">
-      <div class="lieu">
+      <div class="conteneur lieu">
         <div class="lieu__texte">
-          <h2 id="titre-lieu">Une salle voûtée au cœur du village</h2>
-          <p class="chapeau">On entre par une arche de pierre, place du Presbytère, à quelques pas de l’église Notre-Dame. Derrière la porte vitrée, une salle tout en longueur, coiffée de croisées d’ogives, garde la fraîcheur de la pierre même en plein été.</p>
-          <p>Aux beaux jours, quelques tables s’installent dehors, sur la petite place ombragée par un arbre, entre les pots de fleurs et les façades ocre du vieux Moustiers.</p>
-          <p>La cuisine est faite sur place, avec des produits du coin : charcuteries et fromages à partager, tartines gratinées, viandes confites longuement, légumes du marché. Les assiettes sont généreuses et le service, attentif, sans cérémonie.</p>
+          <span class="filet revele" aria-hidden="true"></span>
+          <h2 id="titre-lieu" class="revele">Une salle voûtée au cœur du vieux Moustiers</h2>
+          <p class="chapeau revele" data-delai="1">On entre par une arche de pierre, à quelques pas de l’église Notre-Dame. Derrière la porte vitrée, une salle tout en longueur, coiffée de croisées d’ogives, garde la fraîcheur de la pierre même en plein été.</p>
+          <ul class="lieu__points">
+            <li class="revele" data-delai="1">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21V11C4 6 7.5 3 12 2c4.5 1 8 4 8 9v10M9 21v-7a3 3 0 0 1 6 0v7"/></svg>
+              <span>Une salle sous des voûtes gothiques, éclairée le soir comme une chapelle.</span>
+            </li>
+            <li class="revele" data-delai="2">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22c5-3 8-7 8-12a8 8 0 0 0-16 0c0 5 3 9 8 12z"/><path d="M12 6v8M8 10h8"/></svg>
+              <span>Des plats cuisinés sur place avec des produits du coin, servis généreusement.</span>
+            </li>
+            <li class="revele" data-delai="3">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+              <span>Aux beaux jours, une terrasse sur la petite place ombragée.</span>
+            </li>
+          </ul>
+          <a class="lien-fleche revele" href="#galerie">Voir les photos <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
         <div class="lieu__photos">
-          <figure>
-            <div class="ogive"><img src="img/entree.jpg" width="900" height="1200" loading="lazy" alt="L’entrée du restaurant sous une arche en pierre, avec la terrasse en bois et le présentoir du menu."></div>
-            <figcaption>L’entrée, sous l’arche</figcaption>
+          <figure class="ogive revele-ogive">
+            <img src="img/salle.jpg" width="900" height="1200" loading="lazy" alt="Des clients attablés dans la salle voûtée éclairée le soir.">
           </figure>
-          <figure>
-            <div class="ogive"><img src="img/salle.jpg" width="900" height="1200" loading="lazy" alt="Des clients attablés dans la salle voûtée éclairée le soir."></div>
-            <figcaption>La salle, un soir d’été</figcaption>
+          <figure class="ogive revele-ogive" data-delai="2">
+            <img src="img/entree.jpg" width="900" height="1200" loading="lazy" alt="L’entrée du restaurant sous une arche en pierre, avec la terrasse en bois.">
           </figure>
         </div>
       </div>
     </section>
 
+    <!-- La carte -->
     <section class="section section--sombre" id="carte" aria-labelledby="titre-carte">
-      <div class="interieur">
-        <div class="carte-entete">
-          <h2 id="titre-carte">À l’ardoise</h2>
-          <p class="chapeau">La carte suit le marché et les saisons. Voici ce que l’on y trouve souvent ; l’ardoise du jour vous attend sur place.</p>
+      <div class="conteneur">
+        <div class="intro-section">
+          <span class="filet revele" aria-hidden="true"></span>
+          <h2 id="titre-carte" class="revele">La carte, à l’ardoise</h2>
+          <p class="revele" data-delai="1">Elle suit le marché et les saisons. Voici ce que l’on y trouve souvent ; l’ardoise du jour vous attend sur place.</p>
         </div>
+
+        <div class="onglets revele" role="tablist" aria-label="Catégories de la carte" data-onglets>
+          <span class="onglets__indicateur" aria-hidden="true"></span>
+          <button class="onglet" type="button" role="tab" id="onglet-partager" aria-controls="panneau-partager" aria-selected="true" data-image="img/ardoise.jpg" data-legende="Ardoise de charcuterie">À partager</button>
+          <button class="onglet" type="button" role="tab" id="onglet-tartines" aria-controls="panneau-tartines" aria-selected="false" tabindex="-1" data-image="img/salade.jpg" data-legende="Grande salade du cloître">Tartines et salades</button>
+          <button class="onglet" type="button" role="tab" id="onglet-plats" aria-controls="panneau-plats" aria-selected="false" tabindex="-1" data-image="img/souris-agneau.jpg" data-legende="Souris d’agneau confite">Plats mijotés</button>
+          <button class="onglet" type="button" role="tab" id="onglet-desserts" aria-controls="panneau-desserts" aria-selected="false" tabindex="-1" data-image="img/poulet-morilles.jpg" data-legende="Volaille aux morilles">Pour finir</button>
+        </div>
+
         <div class="carte">
           <div>
-            <h3>À partager</h3>
-            <ul>
-              <li><b>Ardoise gourmande</b><span>Charcuteries et fromages de la région, pour l’apéritif</span></li>
-              <li><b>Ardoise de charcuterie</b><span>Jambon cru, coppa, saucisson, terrine maison, tapenade</span></li>
-            </ul>
+            <div class="panneau" id="panneau-partager" role="tabpanel" aria-labelledby="onglet-partager" tabindex="0">
+              <ul class="plats">
+                <li class="plat"><h3>Ardoise gourmande</h3><span class="plat__mention">À l’apéritif</span><p>Charcuteries et fromages de la région, à partager.</p></li>
+                <li class="plat"><h3>Ardoise de charcuterie</h3><span class="plat__mention">Fait maison</span><p>Jambon cru, coppa, saucisson, terrine maison, tapenade.</p></li>
+              </ul>
+            </div>
+            <div class="panneau" id="panneau-tartines" role="tabpanel" aria-labelledby="onglet-tartines" tabindex="0" hidden>
+              <ul class="plats">
+                <li class="plat"><h3>Tartine au roquefort</h3><span class="plat__mention">La plus demandée</span><p>Pain de campagne gratiné, salade du moment.</p></li>
+                <li class="plat"><h3>Grande salade du cloître</h3><p>Jambon cru, copeaux de fromage, carottes, crème de balsamique.</p></li>
+              </ul>
+            </div>
+            <div class="panneau" id="panneau-plats" role="tabpanel" aria-labelledby="onglet-plats" tabindex="0" hidden>
+              <ul class="plats">
+                <li class="plat"><h3>Souris d’agneau confite</h3><span class="plat__mention">Fait maison</span><p>Cuite longuement, purée maison, tian de légumes.</p></li>
+                <li class="plat"><h3>Confit de canard</h3><p>Peau croustillante, pommes de terre.</p></li>
+                <li class="plat"><h3>Volaille aux morilles</h3><p>Sauce crémée, pommes duchesse, tomate farcie.</p></li>
+                <li class="plat"><h3>Cannellonis gratinés</h3><span class="plat__mention">Végétarien possible</span><p>Sauce tomate, salade composée.</p></li>
+              </ul>
+            </div>
+            <div class="panneau" id="panneau-desserts" role="tabpanel" aria-labelledby="onglet-desserts" tabindex="0" hidden>
+              <ul class="plats">
+                <li class="plat"><h3>Desserts maison</h3><p>Selon l’humeur de la cuisine et la saison.</p></li>
+                <li class="plat"><h3>Cookies maison</h3><span class="plat__mention">À emporter</span><p>Avec le café ou pour la route.</p></li>
+              </ul>
+            </div>
           </div>
-          <div>
-            <h3>Tartines et salades</h3>
-            <ul>
-              <li><b>Tartine au roquefort</b><span>Pain de campagne gratiné, salade du moment</span></li>
-              <li><b>Grande salade du cloître</b><span>Jambon cru, copeaux de fromage, carottes, crème de balsamique</span></li>
-            </ul>
-          </div>
-          <div>
-            <h3>Plats mijotés</h3>
-            <ul>
-              <li><b>Souris d’agneau confite</b><span>Purée maison, tian de légumes</span></li>
-              <li><b>Confit de canard</b><span>Peau croustillante, pommes de terre</span></li>
-              <li><b>Volaille aux morilles</b><span>Sauce crémée, pommes duchesse, tomate farcie</span></li>
-              <li><b>Cannellonis gratinés</b><span>Sauce tomate, salade composée</span></li>
-            </ul>
-          </div>
-          <div>
-            <h3>Pour finir</h3>
-            <ul>
-              <li><b>Desserts maison</b><span>Selon l’humeur de la cuisine</span></li>
-              <li><b>Cookies maison</b><span>À emporter ou avec le café</span></li>
-            </ul>
+          <div class="carte__visuel revele" data-delai="1">
+            <figure>
+              <div class="carte__cadre"><img src="img/ardoise.jpg" width="777" height="800" loading="lazy" alt="" data-carte-image></div>
+              <figcaption data-carte-legende>Ardoise de charcuterie</figcaption>
+            </figure>
           </div>
         </div>
 
-        <div class="assiettes">
-          <figure><img src="img/souris-agneau.jpg" width="1300" height="975" loading="lazy" alt="Souris d’agneau confite, purée et salade sur une assiette en ardoise."><figcaption>Souris d’agneau confite</figcaption></figure>
-          <figure><img src="img/poulet-morilles.jpg" width="1300" height="975" loading="lazy" alt="Volaille aux morilles, pommes duchesse et tomate farcie."><figcaption>Volaille aux morilles</figcaption></figure>
-          <figure><img src="img/ardoise.jpg" width="777" height="800" loading="lazy" alt="Ardoise de charcuteries : jambon cru, saucisson, terrine et tapenade."><figcaption>Ardoise de charcuterie</figcaption></figure>
-          <figure><img src="img/cannellonis.jpg" width="1300" height="975" loading="lazy" alt="Cannellonis gratinés à la sauce tomate et salade composée."><figcaption>Cannellonis gratinés</figcaption></figure>
+        <div class="carte__note revele">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v.5M12 11v5"/></svg>
+          <p>Menu enfant sur demande. Allergies ou intolérances : la liste des allergènes de chaque plat est disponible auprès de l’équipe. Prix nets, service compris, affichés sur place.</p>
         </div>
-
-        <p class="precision">Plats végétariens possibles, menu enfant sur demande. Allergies ou intolérances : la liste des allergènes présents dans chaque plat est disponible auprès de l’équipe, comme l’exige le règlement européen n° 1169/2011. Prix nets, service compris, affichés sur place.</p>
       </div>
     </section>
 
-    <section class="section" aria-labelledby="titre-avis">
-      <h2 id="titre-avis">Ce que les clients retiennent</h2>
-      <div class="avis">
-        <blockquote><p>Le cadre, d’abord : manger sous une voûte de pierre du Moyen Âge, ça ne s’oublie pas.</p><cite>Le mot qui revient le plus dans les avis Google</cite></blockquote>
-        <blockquote><p>Les tartines et les viandes confites, qui se détachent à la fourchette.</p><cite>Les plats les plus cités</cite></blockquote>
-        <blockquote><p>Un service rapide et chaleureux, même les soirs de plein été.</p><cite>Résumé des avis récents</cite></blockquote>
+    <!-- Galerie -->
+    <section class="section" id="galerie" aria-labelledby="titre-galerie">
+      <div class="conteneur">
+        <div class="intro-section">
+          <span class="filet revele" aria-hidden="true"></span>
+          <h2 id="titre-galerie" class="revele">En images</h2>
+          <p class="revele" data-delai="1">Cliquez sur une photo pour l’agrandir.</p>
+        </div>
+        <div class="galerie" data-galerie>
+          <button type="button" class="revele"><img src="img/voute.jpg" width="1300" height="975" loading="lazy" alt="La salle sous sa voûte d’ogives en pierre, avec le bar en bois."><span>La salle voûtée</span></button>
+          <button type="button" class="revele" data-delai="1"><img src="img/souris-agneau.jpg" width="1300" height="975" loading="lazy" alt="Souris d’agneau confite, purée et salade sur une assiette en ardoise."><span>Souris d’agneau confite</span></button>
+          <button type="button" class="revele" data-delai="2"><img src="img/ardoise.jpg" width="777" height="800" loading="lazy" alt="Ardoise de charcuteries : jambon cru, saucisson, terrine et tapenade."><span>Ardoise de charcuterie</span></button>
+          <button type="button" class="revele" data-delai="1"><img src="img/entree.jpg" width="900" height="1200" loading="lazy" alt="L’entrée du restaurant sous une arche en pierre."><span>L’entrée, sous l’arche</span></button>
+          <button type="button" class="revele" data-delai="2"><img src="img/poulet-morilles.jpg" width="1300" height="975" loading="lazy" alt="Volaille aux morilles, pommes duchesse et tomate farcie."><span>Volaille aux morilles</span></button>
+          <button type="button" class="revele" data-delai="3"><img src="img/place-presbytere.jpg" width="1300" height="975" loading="lazy" alt="La place du Presbytère ensoleillée, avec le parasol bleu et la terrasse."><span>La place du Presbytère</span></button>
+          <button type="button" class="revele" data-delai="1"><img src="img/cannellonis.jpg" width="1300" height="975" loading="lazy" alt="Cannellonis gratinés à la sauce tomate et salade composée."><span>Cannellonis gratinés</span></button>
+          <button type="button" class="revele" data-delai="2"><img src="img/salade.jpg" width="1300" height="975" loading="lazy" alt="Salade de jambon cru, copeaux de fromage et carottes râpées."><span>Grande salade</span></button>
+        </div>
       </div>
     </section>
 
+    <!-- Avis -->
+    <section class="section section--claire" aria-labelledby="titre-avis">
+      <div class="conteneur">
+        <div class="avis__entete">
+          <div class="intro-section">
+            <span class="filet revele" aria-hidden="true"></span>
+            <h2 id="titre-avis" class="revele">Ce que les clients retiennent</h2>
+          </div>
+          <div class="note-globale revele" data-delai="1">
+            <strong data-compteur="4.8">4,8</strong>
+            <div><span class="etoiles" aria-hidden="true">★★★★★</span><small>sur 5, d’après 843 avis Google</small></div>
+          </div>
+        </div>
+        <div class="avis">
+          <figure class="avis__carte revele"><blockquote><p>Le cadre, d’abord : dîner sous une voûte de pierre du Moyen Âge, ça ne s’oublie pas.</p></blockquote><figcaption>Le point le plus cité dans les avis</figcaption></figure>
+          <figure class="avis__carte revele" data-delai="1"><blockquote><p>Les tartines et les viandes confites, qui se détachent à la fourchette.</p></blockquote><figcaption>Les plats qui reviennent le plus</figcaption></figure>
+          <figure class="avis__carte revele" data-delai="2"><blockquote><p>Un service rapide et chaleureux, même les soirs de plein été.</p></blockquote><figcaption>Résumé des avis récents</figcaption></figure>
+        </div>
+        <p class="avis__lien revele"><a class="bouton bouton--contour" href="https://maps.google.com/?cid=9205552214971669910" target="_blank" rel="noopener">Lire tous les avis sur Google</a></p>
+      </div>
+    </section>
+
+    <!-- Horaires et réservation -->
     <section class="section" id="horaires" aria-labelledby="titre-horaires">
-      <div class="pratique">
+      <div class="conteneur resa">
         <div>
-          <h2 id="titre-horaires">Horaires</h2>
-          <table class="horaires">
-            <caption class="saut">Horaires d’ouverture du restaurant</caption>
+          <span class="filet revele" aria-hidden="true"></span>
+          <h2 id="titre-horaires" class="revele">Horaires</h2>
+          <table class="horaires revele" data-delai="1">
+            <caption class="invisible">Horaires d’ouverture du restaurant</caption>
             <tbody>
               <tr data-jour="1"><th scope="row">Lundi</th><td>12 h – 14 h 30<br>19 h – 21 h 30</td></tr>
               <tr data-jour="2"><th scope="row">Mardi</th><td>12 h – 14 h 30<br>19 h – 21 h 30</td></tr>
@@ -171,38 +262,53 @@
           </table>
           <p class="petit">Les horaires peuvent changer selon la saison. En cas de doute, un appel suffit.</p>
         </div>
-        <div>
-          <h2>Réserver</h2>
-          <p class="chapeau">La salle est petite et se remplit vite, surtout le soir et en été. Réservez par téléphone, la veille ou le jour même.</p>
-          <p><a class="bouton" href="tel:+33743613336">Appeler le 07 43 61 33 36</a></p>
+        <div class="carte-resa revele" data-delai="2">
+          <h2>Réserver une table</h2>
+          <p>La salle est petite et se remplit vite, surtout le soir et en été. Réservez par téléphone, la veille ou le jour même.</p>
+          <a class="numero" href="tel:+33743613336">07 43 61 33 36</a>
+          <div class="actions">
+            <a class="bouton bouton--ocre" href="tel:+33743613336">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+              Appeler
+            </a>
+            <button class="bouton bouton--contour-clair" type="button" data-copier="07 43 61 33 36">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg>
+              Copier le numéro
+            </button>
+          </div>
           <p class="petit">Les réservations sont soumises à nos <a href="conditions.html#reservation">conditions de réservation</a>.</p>
         </div>
       </div>
     </section>
 
-    <section class="section" id="venir" aria-labelledby="titre-venir">
-      <div class="pratique">
+    <!-- Venir -->
+    <section class="section section--claire" id="venir" aria-labelledby="titre-venir">
+      <div class="conteneur venir">
         <div>
-          <h2 id="titre-venir">Venir</h2>
-          <address class="adresse">Place du Presbytère<br>04360 Moustiers-Sainte-Marie</address>
-          <p>Le centre du village est piéton. Garez-vous sur l’un des parkings à l’entrée de Moustiers, puis montez à pied vers l’église : la place du Presbytère est juste à côté.</p>
-          <p class="liens-acces">
-            <a class="bouton" href="https://www.google.com/maps/dir/?api=1&amp;destination=Restaurant+Les+Tables+du+Clo%C3%AEtre+Place+du+Presbyt%C3%A8re+04360+Moustiers-Sainte-Marie" target="_blank" rel="noopener">Itinéraire</a>
-            <a class="lien-simple" href="tel:+33743613336">07 43 61 33 36</a>
-          </p>
-          <figure class="acces-photo">
-            <img src="img/place-presbytere.jpg" width="1300" height="975" loading="lazy" alt="La place du Presbytère ensoleillée, avec le parasol bleu et la terrasse du restaurant sous l’arche.">
-            <figcaption>La place du Presbytère et la terrasse</figcaption>
-          </figure>
+          <span class="filet revele" aria-hidden="true"></span>
+          <h2 id="titre-venir" class="revele">Venir</h2>
+          <address class="adresse revele" data-delai="1">Place du Presbytère<br>04360 Moustiers-Sainte-Marie</address>
+          <ol class="etapes">
+            <li class="revele" data-delai="1">Garez-vous sur l’un des parkings à l’entrée du village : le centre est piéton.</li>
+            <li class="revele" data-delai="2">Montez à pied par les ruelles en direction de l’église Notre-Dame.</li>
+            <li class="revele" data-delai="3">La place du Presbytère est juste à côté de l’église : l’entrée est sous l’arche.</li>
+          </ol>
+          <div class="actions revele">
+            <a class="bouton" href="https://www.google.com/maps/dir/?api=1&amp;destination=Restaurant+Les+Tables+du+Clo%C3%AEtre+Place+du+Presbyt%C3%A8re+04360+Moustiers-Sainte-Marie" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l18-8-8 18-2-8z"/></svg>
+              Itinéraire
+            </a>
+            <a class="bouton bouton--contour" href="tel:+33743613336">07 43 61 33 36</a>
+          </div>
         </div>
         <!-- Le plan Google ne se charge qu'avec l'accord du visiteur (Google y dépose des cookies) -->
-        <div class="plan" data-map
+        <div class="plan revele" data-delai="1" data-map
              data-map-src="https://maps.google.com/maps?q=Restaurant%20Les%20Tables%20du%20Clo%C3%AEtre%2C%20Place%20du%20Presbyt%C3%A8re%2C%2004360%20Moustiers-Sainte-Marie&amp;z=17&amp;hl=fr&amp;output=embed">
           <div class="plan-accord">
             <svg class="plan-repere" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg>
             <p class="plan-lieu">Place du Presbytère, près de l’église</p>
             <p class="plan-note">Le plan interactif est fourni par Google, qui dépose des cookies. Il ne s’affiche que si vous le demandez.</p>
-            <button class="bouton" type="button" data-map-load>Afficher le plan</button>
+            <button class="bouton bouton--ocre" type="button" data-map-load>Afficher le plan</button>
             <a class="plan-alt" href="https://www.google.com/maps/dir/?api=1&amp;destination=Restaurant+Les+Tables+du+Clo%C3%AEtre+Place+du+Presbyt%C3%A8re+04360+Moustiers-Sainte-Marie" target="_blank" rel="noopener">ou ouvrir l’itinéraire dans Google Maps</a>
           </div>
         </div>
@@ -211,27 +317,66 @@
   </main>
 
   <footer class="pied">
-    <div class="pied__grille">
-      <div>
-        <h2>Les Tables du Cloître</h2>
-        <p>Place du Presbytère<br>04360 Moustiers-Sainte-Marie<br><a href="tel:+33743613336">07 43 61 33 36</a></p>
+    <div class="conteneur">
+      <div class="pied__grille">
+        <div>
+          <a class="marque" href="/">
+            <svg viewBox="0 0 24 32" aria-hidden="true"><path d="M2 31V15C2 8 6 3.5 12 1c6 2.5 10 7 10 14v16"/><path d="M7 31V17c0-3.4 1.9-6.2 5-7.8 3.1 1.6 5 4.4 5 7.8v14"/></svg>
+            <span>Les Tables du Cloître</span>
+          </a>
+          <p>Cuisine maison sous la voûte de l’ancien cloître de Moustiers-Sainte-Marie.</p>
+        </div>
+        <div>
+          <h2>Nous trouver</h2>
+          <p>Place du Presbytère<br>04360 Moustiers-Sainte-Marie</p>
+          <p><a href="tel:+33743613336">07 43 61 33 36</a></p>
+        </div>
+        <div>
+          <h2>Ouverture</h2>
+          <p>Midi et soir, 6 jours sur 7<br>Fermé le mercredi<br>Jeudi le soir seulement</p>
+        </div>
+        <div>
+          <h2>Informations</h2>
+          <ul>
+            <li><a href="mentions-legales.html">Mentions légales</a></li>
+            <li><a href="confidentialite.html">Confidentialité et cookies</a></li>
+            <li><a href="conditions.html">Conditions générales</a></li>
+            <li><a href="accessibilite.html">Accessibilité</a></li>
+          </ul>
+        </div>
       </div>
-      <div>
-        <h2>Informations</h2>
-        <ul>
-          <li><a href="mentions-legales.html">Mentions légales</a></li>
-          <li><a href="confidentialite.html">Confidentialité et cookies</a></li>
-          <li><a href="conditions.html">Conditions générales</a></li>
-          <li><a href="accessibilite.html">Accessibilité</a></li>
-        </ul>
-      </div>
-      <div>
-        <h2>Bon à savoir</h2>
+      <div class="pied__bas">
+        <p>© <span id="annee">2026</span> Les Tables du Cloître. Ce site ne dépose aucun cookie ; le plan Google ne se charge qu’avec votre accord.</p>
         <p>L’abus d’alcool est dangereux pour la santé, à consommer avec modération.</p>
       </div>
     </div>
-    <p class="pied__bas">© <span id="annee">2026</span> Les Tables du Cloître. Ce site ne dépose aucun cookie ; le plan Google ne se charge qu’avec votre accord.</p>
   </footer>
+
+  <div class="barre-mobile" data-barre-mobile>
+    <a class="bouton bouton--ocre" href="tel:+33743613336">Appeler</a>
+    <a class="bouton" href="https://www.google.com/maps/dir/?api=1&amp;destination=Restaurant+Les+Tables+du+Clo%C3%AEtre+Place+du+Presbyt%C3%A8re+04360+Moustiers-Sainte-Marie" target="_blank" rel="noopener">Itinéraire</a>
+  </div>
+
+  <button class="haut-de-page" type="button" data-haut aria-label="Revenir en haut de la page">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+  </button>
+
+  <dialog class="visionneuse" data-visionneuse aria-label="Photos du restaurant">
+    <div class="visionneuse__haut">
+      <span class="visionneuse__compteur" data-v-compteur></span>
+      <button class="rond" type="button" data-v-fermer aria-label="Fermer">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <div class="visionneuse__scene">
+      <img src="" alt="" data-v-image>
+      <button class="rond visionneuse__prec" type="button" data-v-prec aria-label="Photo précédente"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
+      <button class="rond visionneuse__suiv" type="button" data-v-suiv aria-label="Photo suivante"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+    </div>
+    <p class="visionneuse__legende" data-v-legende></p>
+  </dialog>
+
+  <div class="toast" role="status" aria-live="polite" data-toast></div>
 
   <script src="js/site.js" defer></script>
 </body>
