@@ -209,8 +209,8 @@ figcaption { font-size: .85rem; color: var(--ardoise-douce); margin-top: .5rem; 
 .carte-entete .chapeau { color: #d6cfbf; margin: 0; }
 .carte {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
-  gap: 2.5rem 3.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(13.5rem, 1fr));
+  gap: 2.5rem 3rem;
 }
 .carte h3 {
   color: var(--ocre);
