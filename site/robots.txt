@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://les-tables-du-cloitre.onrender.com/sitemap.xml
